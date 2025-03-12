@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class HealthPotion : MonoBehaviour, IInteractable
 {
-    public void AddToTheInventory()
+
+    public int healAmount = 10;
+    
+    public void Interact(GameObject owner)
     {
+        Health healthComponent = owner.GetComponent<Health>();
         
+        if(healthComponent == null) return;
+        
+        healthComponent.AddHealth(healAmount);
+        Destroy(gameObject);
     }
 }

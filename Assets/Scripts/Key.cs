@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : IInteractable
 {
-    public void AddToTheInventory()
+    public void Interact(GameObject owner)
     {
         throw new System.NotImplementedException();
     }

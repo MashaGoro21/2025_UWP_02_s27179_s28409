@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Coin : IInteractable
 {
-    public void AddToTheInventory()
+    public void Interact(GameObject owner)
     {
-        
+        throw new System.NotImplementedException();
     }
 }
