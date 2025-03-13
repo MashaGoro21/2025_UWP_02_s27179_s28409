@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : IInteractable
+public class Key : MonoBehaviour, IInteractable
 {
     public void Interact(GameObject owner)
     {
-        throw new System.NotImplementedException();
+        Inventory.Instance.AddKey();
+        Destroy(gameObject);
     }
 }

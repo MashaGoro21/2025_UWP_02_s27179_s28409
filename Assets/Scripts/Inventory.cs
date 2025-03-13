@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int coins;
-    public int keys;
-
-
+    private int coins;
+    private int keys;
+    private static Inventory _instance;
+    public static Inventory Instance => _instance ??= new Inventory();
 
     private void Awake()
     {
         coins = 0;
+        keys = 0;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void AddCoin()
     {
-        
+        coins++;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddKey()
     {
-        
+        keys++;
+    }
+
+    public int GetKeys()
+    {
+        return keys;
+    }
+
+    public void UseKey()
+    {
+        keys--;
     }
 }

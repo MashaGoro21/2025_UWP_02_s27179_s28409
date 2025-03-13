@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : IInteractable
+public class Coin : MonoBehaviour, IInteractable
 {
     public void Interact(GameObject owner)
     {
-        throw new System.NotImplementedException();
+        Inventory.Instance.AddCoin();
+        Destroy(gameObject);
     }
 }
